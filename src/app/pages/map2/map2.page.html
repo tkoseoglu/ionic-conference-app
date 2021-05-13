@@ -1,0 +1,32 @@
+<google-map id="map"
+  height="500px"
+  width="100%"
+  [zoom]="mapZoom"
+  [center]="mapCenter"
+  [options]="mapOptions"
+  (mapClick)="onMapClicked($event)">
+  <!-- <map-polyline [path]="vertices"
+    [options]="polylineOptions"
+    (polylineClick)="onPolylineClick($event)"
+    (polylineRightclick)="onPolylineRightclick($event)"
+    (polylineDrag)="onPolylineDrag($event)"
+    (polylineDragstart)="onPolylineDragstart($event)"
+    (polylineDragend)="onPolylineDragend($event)"
+    (polylineDblclick)="onPolylineDblclick($event)">
+  </map-polyline> -->
+
+  <!-- (polylineRightclick)="onPolylineRightclick($event)" -->
+  <map-polyline [path]="vertices"
+    [options]="polylineOptions">
+  </map-polyline>
+
+  <map-rectangle [bounds]="bounds"
+    [options]="rectangleOptions">
+  </map-rectangle>
+
+  <!-- <map-marker *ngFor="let vertex of vertices"
+    [draggable]="true"
+    [position]="vertex"
+    (mapClick)="onMarkerClicked($event)">
+  </map-marker> -->
+</google-map>

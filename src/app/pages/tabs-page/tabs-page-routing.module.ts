@@ -49,6 +49,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'map2',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../map2/map2.module').then(m => m.Map2PageModule)
+          }
+        ]
+      },
+      {
         path: 'about',
         children: [
           {
