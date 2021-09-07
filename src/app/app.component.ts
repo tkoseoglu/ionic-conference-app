@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { MenuController, Platform, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
-    private splashScreen: SplashScreen,
+    private lottieSplashScreen: LottieSplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
     private userData: UserData,
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
-    
+
     this.checkLoginStatus();
     this.listenForLoginEvents();
 
@@ -87,6 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
+    this.lottieSplashScreen.show();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       //this.splashScreen.hide();

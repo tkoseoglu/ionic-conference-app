@@ -5,7 +5,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
@@ -27,7 +28,7 @@ import { AppComponent } from './app.component';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [InAppBrowser, LottieSplashScreen, StatusBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
