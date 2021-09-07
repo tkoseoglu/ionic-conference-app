@@ -60,6 +60,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
+    await this.storage.create();
+    
     this.checkLoginStatus();
     this.listenForLoginEvents();
 
@@ -87,7 +89,7 @@ export class AppComponent implements OnInit {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      //this.splashScreen.hide();
     });
   }
 
